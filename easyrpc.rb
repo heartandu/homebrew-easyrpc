@@ -5,21 +5,21 @@
 class Easyrpc < Formula
   desc "EasyRPC is an easy-to-use gRPC client."
   homepage "https://github.com/heartandu/easyrpc/"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/heartandu/easyrpc/releases/download/v0.1.1/easyrpc_0.1.1_darwin_x86_64.tar.gz"
-      sha256 "0066836e1771cb4f6d38c2f51c2f79b56ed6cd6a3e76c64428fd81208c501209"
+    if Hardware::CPU.intel?
+      url "https://github.com/heartandu/easyrpc/releases/download/v0.2.0/easyrpc_0.2.0_darwin_x86_64.tar.gz"
+      sha256 "2020474155c93af574a0abb71a29f03f8db7db28f0c94e2fa5950864787f30e8"
 
       def install
         bin.install "easyrpc"
       end
     end
-    on_arm do
-      url "https://github.com/heartandu/easyrpc/releases/download/v0.1.1/easyrpc_0.1.1_darwin_arm64.tar.gz"
-      sha256 "0a4b3226557e5418f79bf634972719b65dc7abc2df01e924409b4fe65e757599"
+    if Hardware::CPU.arm?
+      url "https://github.com/heartandu/easyrpc/releases/download/v0.2.0/easyrpc_0.2.0_darwin_arm64.tar.gz"
+      sha256 "d41382fe06af4207777f49f913ee304e118ec1037fe82ed85fdea3ecad0ac867"
 
       def install
         bin.install "easyrpc"
@@ -28,24 +28,18 @@ class Easyrpc < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/heartandu/easyrpc/releases/download/v0.1.1/easyrpc_0.1.1_linux_x86_64.tar.gz"
-        sha256 "9b92c6487e95c7956dcf7f4d612a35a8c5b0c43d66fd4634f39706d49dddbb7c"
-
-        def install
-          bin.install "easyrpc"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/heartandu/easyrpc/releases/download/v0.2.0/easyrpc_0.2.0_linux_x86_64.tar.gz"
+      sha256 "c4cdac3d2ca27378838e2003ebcaedebf99ad4b55c0dff468e4eec2436fd083b"
+      def install
+        bin.install "easyrpc"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/heartandu/easyrpc/releases/download/v0.1.1/easyrpc_0.1.1_linux_arm64.tar.gz"
-        sha256 "839af439fbd5152ecf008945dbb7a45a643f87b3075c42abfc24ccea3d19cacf"
-
-        def install
-          bin.install "easyrpc"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/heartandu/easyrpc/releases/download/v0.2.0/easyrpc_0.2.0_linux_arm64.tar.gz"
+      sha256 "a5b43a8e2325ad9aaab8d5c67d035c0114da1bf9fdf92ed38d36cb867c5626d9"
+      def install
+        bin.install "easyrpc"
       end
     end
   end
