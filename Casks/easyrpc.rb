@@ -5,7 +5,7 @@ cask "easyrpc" do
 Inspired by grpcurl and evans and aims to ease the process of querying protobuf RPCs from a terminal.
 "
   homepage "https://github.com/heartandu/easyrpc/"
-  version "0.4.1"
+  version "0.5.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -16,22 +16,22 @@ Inspired by grpcurl and evans and aims to ease the process of querying protobuf 
   on_macos do
     on_intel do
       url "https://github.com/heartandu/easyrpc/releases/download/v#{version}/easyrpc_#{version}_darwin_x86_64.tar.gz"
-      sha256 "b5333eccc28130919274522b1a90ebdd9fa1894fe83f1f80debf6998f54da991"
+      sha256 "d2d0a0075087b527a1b7b07a6537b197c80c3d7778f2e7089a7d8a0d0aada6c1"
     end
     on_arm do
       url "https://github.com/heartandu/easyrpc/releases/download/v#{version}/easyrpc_#{version}_darwin_arm64.tar.gz"
-      sha256 "98167b0a06a33ec6866df73d90d3ede545e9ae5270791798cde5a16dffe43a79"
+      sha256 "057784e5d2f4a7b15b9cf3430c2641645b9a996f9999118eea09a2d6bcd3db31"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/heartandu/easyrpc/releases/download/v#{version}/easyrpc_#{version}_linux_x86_64.tar.gz"
-      sha256 "d3a64540f65b07f100a368568ea538d81bb751b330426c71f5d59a79f43a8038"
+      sha256 "2856bd078365cc9518e590fae87d8c465608e28d706d42355573d60f6ec42ce1"
     end
     on_arm do
       url "https://github.com/heartandu/easyrpc/releases/download/v#{version}/easyrpc_#{version}_linux_arm64.tar.gz"
-      sha256 "69128b2d00e10f369dee891f133bcf0580d0990851d64d34a41aeea66dcd84f1"
+      sha256 "e62f571e54a840b675749a331ca66dec8a2526a84cc673412d9e0cbe7eab1da1"
     end
   end
 
